@@ -1,4 +1,4 @@
-# rest-api-tutorial
+# REST API Tutorial
 
 This sample is published as part of the blog article at www.toptal.com/blog:
 
