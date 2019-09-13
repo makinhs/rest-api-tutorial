@@ -1,0 +1,32 @@
+version: '3'
+services:
+  api:
+    image: makinhs/rest-api-tutorial
+    build: .
+    networks:
+      - backend
+    ports:
+      - "3600:3600"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+    ports:
+      - "27017:27017"
+
+  web-cli:
+    image: makinhs/rest-api-tutorial
+    links:
+      - mongo
+    networks:
+      - backend
+    command: sh
+
+networks:
+  backend:
+    driver: bridge

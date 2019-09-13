@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/rest-tutorial');
+const mongoose = require('../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
