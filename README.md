@@ -31,3 +31,7 @@ If you are familiar to docker and you have docker installed on your machine and 
  - docker-compose up
  - It will run the mongodb at port 27017 (for testing purposes only).
  - It will run the server at port 3600.
+
+### 2020-02-01
+
+I've created a 2020 version of this project using Typescript. If you might be interested on it, please check the following repository: https://github.com/makinhs/expressjs-api-tutorial
