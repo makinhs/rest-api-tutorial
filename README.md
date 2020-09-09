@@ -1,22 +1,19 @@
 # REST API Tutorial
 
-This sample is published as part of the blog article at www.toptal.com/blog:
-
-- https://www.toptal.com/nodejs/secure-rest-api-in-nodejs
-
-Visit www.toptal.com/blog and subscribe to our newsletter to read great posts
+This sample is published as part of [the corresponding article](https://www.toptal.com/nodejs/secure-rest-api-in-nodejs) at the Toptal Engineering Blog. Visit https://www.toptal.com/developers/blog and subscribe to our newsletter to read great posts!
 
 ## Before using
 
 - Please make sure that you have:
- - node.js installed (https://nodejs.org/)
- - have mongodb installed and running locally (https://www.mongodb.com/)
+ - Node.js installed (https://nodejs.org/)
+ - MongoDB installed and running locally (https://www.mongodb.com/)
    - Using Windows, just open the terminal at where you installed mongo and run `mongod.exe`
- - run npm install in your root project folder
+ - Run `npm install` or `yarn` in your root project folder
+
 ## Usage
 
 To run the project, please use a command line the following:
- - npm start
+ - `npm start`
     - It will run the server at port 3600.
 
 
@@ -35,3 +32,11 @@ If you are familiar to docker and you have docker installed on your machine and 
 ### 2020-02-01
 
 I've created a 2020 version of this project using Typescript. If you might be interested on it, please check the following repository: https://github.com/makinhs/expressjs-api-tutorial
+
+### 2020-09-09
+
+- Updated and pruned dependencies.
+- Fixed deprecation warnings.
+- Leveraged `findOneAndUpdate` to simplify PATCH code.
+- Changed default MongoDB server name to `localhost` to simplify first-time setup.
+- Checked that it works with the latest version of Node.js, 14.9.0.
