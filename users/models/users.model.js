@@ -76,7 +76,7 @@ exports.patchUser = (id, userData) => {
 
 exports.removeById = (userId) => {
     return new Promise((resolve, reject) => {
-        User.remove({_id: userId}, (err) => {
+        User.deleteMany({_id: userId}, (err) => {
             if (err) {
                 reject(err);
             } else {
