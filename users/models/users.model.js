@@ -59,24 +59,14 @@ exports.list = (perPage, page) => {
 };
 
 exports.patchUser = (id, userData) => {
-    return new Promise((resolve, reject) => {
-        User.findById(id, function (err, user) {
-            if (err) reject(err);
-            for (let i in userData) {
-                user[i] = userData[i];
-            }
-            user.save(function (err, updatedUser) {
-                if (err) return reject(err);
-                resolve(updatedUser);
-            });
-        });
-    })
-
+    return User.findOneAndUpdate({
+        _id: id
+    }, userData);
 };
 
 exports.removeById = (userId) => {
     return new Promise((resolve, reject) => {
-        User.remove({_id: userId}, (err) => {
+        User.deleteMany({_id: userId}, (err) => {
             if (err) {
                 reject(err);
             } else {
