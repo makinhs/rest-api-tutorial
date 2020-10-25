@@ -75,4 +75,3 @@ exports.removeById = (userId) => {
         });
     });
 };
-
