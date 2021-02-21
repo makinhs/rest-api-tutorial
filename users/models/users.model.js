@@ -1,6 +1,8 @@
 const mongoose = require('../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
+// Defines the user schema that will be used to create it upon the 1st
+// invocation to create a user.
 const userSchema = new Schema({
     firstName: String,
     lastName: String,
