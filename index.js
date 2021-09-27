@@ -2,7 +2,6 @@ const config = require('./common/config/env.config.js');
 
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 
 const AuthorizationRouter = require('./authorization/routes.config');
 const UsersRouter = require('./users/routes.config');
@@ -20,7 +19,7 @@ app.use(function (req, res, next) {
     }
 });
 
-app.use(bodyParser.json());
+app.use(express.json());
 AuthorizationRouter.routesConfig(app);
 UsersRouter.routesConfig(app);
 
