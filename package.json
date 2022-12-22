@@ -19,7 +19,7 @@
   "homepage": "https://github.com/makinhs/rest-api-tutorial#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.10.3",
     "uuid": "^8.3.0"
   }
