@@ -11,10 +11,14 @@ exports.verifyRefreshBodyField = (req, res, next) => {
 };
 
 exports.validRefreshNeeded = (req, res, next) => {
-    let b = Buffer.from(req.body.refresh_token, 'base64');
-    let refresh_token = b.toString();
-    let hash = crypto.createHmac('sha512', req.jwt.refreshKey).update(req.jwt.userId + secret).digest("base64");
-    if (hash === refresh_token) {
+    let parts = req.body.refresh_token.split('.');
+    if (parts.length !== 2) {
+        return res.status(400).send({error: 'Invalid refresh token'});
+    }
+    let salt = parts[0];
+    let expectedHash = Buffer.from(parts[1], 'base64').toString();
+    let hash = crypto.createHmac('sha512', salt).update(req.jwt.userId + secret).digest("base64");
+    if (hash === expectedHash) {
         req.body = req.jwt;
         return next();
     } else {
